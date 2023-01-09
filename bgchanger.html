@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        #menu_bar{
+            text-align: center;
+            background-color: rgb(6, 85, 87);
+        }
+        #menu_bar li{
+            display: inline-block;
+            padding: 10px 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #container{
+            text-align: center;
+            padding: 50px 100px;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+        p{
+            font-size: 18px;
+            text-align: justify;
+        }
+        .btn{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: solid gray 2px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #white{
+            background-color: wheat ;
+        }
+        #aqua{
+            background-color: aquamarine ;
+        }
+        #violet{
+            background-color:violet ;
+        }
+        #black{
+            background-color: black;
+        }
+        #color_switch{
+            text-align: right;
+        }
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+    <nav id="menu_bar" >
+        <li> Home</li>
+        <li> About us</li>
+        <li> Our Team</li>
+        <li> Client</li>
+        <li> Contact Us</li>
+    </div>
+    </nav>
+    <div id="container"> 
+    <h1 class="text">About us</h1>
+    <img src="C:\Users\91960\Desktop\JS\about us.jpg" alt="">
+    <p class="text">
+        I WAS still a thief when I met Anil. And though only 15, I was an experienced and fairly successful hand.Anil was watching a wrestling match when I approached him. He was about 25 — a tall, lean fellow — and he looked easy-going, kind and simple enough for my purpose. I hadn’t had much luck of late and thought I might be able to get into the young man’s confidence. “You look a bit of a wrestler yourself,” I said. A little flattery helps in making friends.“So do you,” he replied, which put me off for a moment because at that time I was rather thin.“Well,” I said modestly, “I do wrestle a bit.” “What’s your name?” “Hari Singh,” I lied. I took a new name every month. That kept me ahead of the police and my former employers.After this introduction, Anil talked about the well-oiled wrestlers who were grunting, lifting and throwing each other about. I didn’t have much to say. Anil walked away. I followed casually.“Hello again,” he said. I gave him my most appealing smile. “I want to work for you,” I said. “But I can’t pay you.”I thought that over for a minute. Perhaps I had misjudged my man. I asked, “Can you feed me?” “Can you cook?” “I can cook,” I lied again. “If you can cook, then may be I can feed you.” He took me to his room over the Jumna Sweet Shop and told me I could sleep on the balcony. But the meal I cooked that night must have been terrible because Anil gave it to a stray dog and told me to be off. But I just hung around, smiling in my most appealing way, and he couldn’t help laughing. Later, he patted me on the head and said never mind, he’d teach me to cook. He also taught me to write my name and said he would soon teach me to write whole sentences and to add numbers. I was grateful. I knew that once I could write like an educated man there would be no limit to what I could achieve. It was quite pleasant working for Anil. I made the tea in the morning and then would take my time buying the day’s supplies, usually making a profit of about a rupee a day. I think he knew I made a little money this way but he did not seem to mind.I thought that over for a minute. Perhaps I had misjudged my man. I asked, “Can you feed me?” “Can you cook?” “I can cook,” I lied again. “If you can cook, then may be I can feed you.”
+     </p>
+    </div>
+     <div id="color_switch">
+        <span class="btn" id="white" onclick="changeBG('#ffffff')"></span>
+        <span class="btn" id="aqua" onclick="changeBG('#7fffd4')"></span>
+        <span class="btn" id="violet" onclick="changeBG('#ce9aff')"></span>
+        <span class="btn" id="black" onclick="changeBG('#000000')"></span>
+     </div>
+     <script>
+        function changeBG(color){
+            document.body.style.backgroundColor = color;
+            let txt = document.getElementsByClassName("text");
+            if(color == "#000000"){
+                for(let elm of txt){
+                    elm.style.color = "white";
+                }
+            }else{
+                for(let elm of txt){
+                    elm.style.color = "black";
+            }
+        }
+    }
+    window.addEventListener('scroll', function(){
+        let navbar = document.getElementById("menu_bar");
+       if(window.pageYOffset >= 190){
+         navbar.classList.add('sticky');
+       }else{
+        navbar.classList.remove('sticky');
+       }
+    });
+     </script>
+</body>
+</html>
